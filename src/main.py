@@ -92,7 +92,8 @@ async def part4_attacks():
     from attacks.attacks import run_attacks, save_attack_results
 
     red_default, red_default_runner = create_red_agent_default()
-    await test_agent(red_default, red_default_runner)
+    # skip test_agent smoke call — can block in lab environment
+    print("(Skipping quick-test to go straight to attacks)")
 
     print("\n--- Attacks on Red ---")
     unsafe_results = await run_attacks(
